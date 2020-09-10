@@ -1,0 +1,211 @@
+<!-- banner & form conatiner start here -->
+<div class="position-relative">
+    <img src="assets/images/banner.jpg" class="img-fluid"/>
+    <div class="form-container p-2">
+        <div class="border p-3">
+        <h4 class="pb-3">Let's Connect</h4>
+            
+  <div class="form-group pb-2">
+  <span><i class="fa fa-user-o" aria-hidden="true"></i></span>
+    <input type="text"  id="fname" class="input-container" placeholder="Your name" [ngModel]="name" pattern="[a-zA-Z][a-zA-Z ]+" #fname="ngModel" required (keyup)="onRegister($event)"> 
+    <div *ngIf="fname.dirty && fname.invalid" class="error_msg form-text text-danger">
+        <small [hidden]="!fname.errors.pattern">Special characters and numbers are not allowed.</small>
+        <small [hidden]="!fname.errors.required">Please enter your name</small>       
+    </div> 
+  </div>
+  <div class="form-group pb-2">
+  <span><i class="fa fa-mobile" aria-hidden="true"></i> +91- </span>
+    <input type="text" id="mobileNo" pattern="[6-9][0-9]{9}?" placeholder="Mobile No"
+                            class="input-container mobile" required #mobileRef="ngModel" maxlength="10" [(ngModel)]="mobileNumber"
+                            (keyup)="onRegister($event)" maxlength="10"
+                            onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')">
+     <div *ngIf="mobileRef.dirty && mobileRef.invalid" class="error_msg form-text text-danger">
+       <small [hidden]="!mobileRef.errors.required">Please enter your mobile number.</small>
+        <small  [hidden]="!mobileRef.errors.pattern">Please enter valid mobile number</small>
+      </div>
+  </div>
+   <div class="form-group pb-2"> 
+   <span><i class="fa fa-envelope-open-o" aria-hidden="true"></i></span>
+    <input type="text" id="emailid"
+                            pattern="[a-zA-Z0-9.-]{1,63}@[a-zA-Z0-9-]{1,200}[.]{1}[a-zA-Z]{1,200}(.[a-zA-Z]{2,11})?"
+                            placeholder="Email" class="input-container" required #emailRef="ngModel" [(ngModel)]="emailid"
+                            (keyup)="onRegister($event)" maxlength="200">
+      <div *ngIf="emailRef.dirty && emailRef.invalid" class="error_msg form-text text-danger">
+            <small [hidden]="!emailRef.errors.required" >Please enter your email address.</small>
+            <small [hidden]="!emailRef.errors.pattern">Please enter a valid email address.</small>
+    </div>
+  </div>
+  <div class="form-group pb-2">    
+  <span><i class="fa fa-map-marker" aria-hidden="true"></i></span>
+    <input type="text" id="city" placeholder="City" required #cityRef="ngModel"
+                            class="input-container" [(ngModel)]="city" (keyup)="onRegister($event)"
+                            pattern="[a-zA-Z][a-zA-Z ]+">
+                          <!---->
+                          <div *ngIf="cityRef.dirty && cityRef.invalid" class="error_msg form-text text-danger">
+                            <small [hidden]="!cityRef.errors.required">Please enter your city.</small>
+                            <small [hidden]="!cityRef.errors.pattern">Special characters and numbers are not allowed.'</small>
+                          </div>
+                        
+  </div>
+   <div class="form-group"> 
+   <span><i class="fa fa-language" aria-hidden="true"></i></span>
+    <input type="text" class="input-container" placeholder="Choose Your Language"> 
+  </div>
+  <div class="form-group"> 
+  <span><i class="fa fa-envelope-o" aria-hidden="true"></i></span>
+   <textarea rows="2" cols="20" class="input-container" placeholder="Massage..."></textarea>
+
+  </div>
+  <div class="form-group form-check">
+    <input type="checkbox" class="form-check-input" id="exampleCheck1" checked>
+    <label class="form-check-label" for="exampleCheck1"><small>I agree to the term & condition</small></label>
+  </div>
+  <div class="form-text text-success text-center p-2" *ngIf="!success">
+  Data Sucssfully enter your Data
+  </div>
+  <div class="text-center">
+  <button type="submit" class="blue-btn" [disabled]="btnDisable" (click)="resetform()">Submit</button>
+  </div>
+
+        </div> 
+    </div>
+</div>
+<!--banner & form continer end here -->
+<!-- paint service conatner start herer -->
+<div class="bg-white paint-service pt-4 pb-4">
+<div class="container">
+  <h4 class="pb-4 text-center">What make Express Painting <br>the best-in-class painting service?</h4>
+  <div class="row">
+    <div class="col-lg-6">
+    <p>
+    Contrary to popular belief, Lorem Ipsum is not <span>simply random text</span>. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia,
+    </p>
+     <p>
+    It has roots in a piece of classical Latin <span>literature from 45 BC</span>, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia,
+    </p>
+     <p>
+    Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia,
+    </p>
+     <p>
+    a Latin professor at Hampden-Sydney College in Virginia,
+    </p>
+     <p>
+    Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock
+    </p>
+    </div>
+    <div class="col-lg-6">
+    <img src="assets/images/paint-services.jpg" class="img-thumbnail shadow-sm">
+    </div> 
+</div> 
+</div>
+</div>
+<!-- paint service conatner end herer -->
+<!-- paint right choice conatner start herer -->
+<div class="bg-light paint-right-choice pt-4 pb-4">
+<div class="container">
+  <h4 class="pb-4 text-center">What make Express Painting the right Choice?</h4>
+  <div class="row">
+      <div class="col-lg-4">
+          <div class="safyer">
+            <div class="body-content p-4">
+               <h4 class="pb-3 text-center">SAFYER</h4>
+                <div class="row mb-2">
+                  <div class="col-lg-3"><img src="assets/images/hand.jpg"></div>
+                  <div class="col-lg-9"><h6>Contrary to popular belief, Lorem Ipsum is not</h6></div>
+                </div>
+                <div class="row mb-2">
+                  <div class="col-lg-3"><img src="assets/images/hand.jpg"></div>
+                  <div class="col-lg-9"><h6>It has roots in a piece of classical Latin</h6></div>
+                </div>
+                <div class="row mb-2">
+                  <div class="col-lg-3"><img src="assets/images/hand.jpg"></div>
+                  <div class="col-lg-9"><h6>Hampden-Sydney College in Virginia</h6></div>
+                </div>
+                <div class="row mb-2">
+                  <div class="col-lg-3"><img src="assets/images/hand.jpg"></div>
+                  <div class="col-lg-9"><h6>Making it over 2000 years old. Richard McClintock</h6></div>
+                </div>
+            </div>
+            <div class="footer-content">
+              <img src="assets/images/safyer-strip.png" class="img-fluid">
+            </div>
+          </div>
+      </div>
+        <div class="col-lg-4">
+          <div class="faster">
+            <div class="body-content p-4">
+               <h4 class="pb-3 text-center">FASTER</h4>
+                <div class="row mb-2">
+                  <div class="col-lg-3"><img src="assets/images/hand.jpg"></div>
+                  <div class="col-lg-9"><h6>Contrary to popular belief, Lorem Ipsum is not</h6></div>
+                </div>
+                <div class="row mb-2">
+                  <div class="col-lg-3"><img src="assets/images/hand.jpg"></div>
+                  <div class="col-lg-9"><h6>It has roots in a piece of classical Latin</h6></div>
+                </div>
+                <div class="row mb-2">
+                  <div class="col-lg-3"><img src="assets/images/hand.jpg"></div>
+                  <div class="col-lg-9"><h6>Hampden-Sydney College in Virginia</h6></div>
+                </div>
+                <div class="row mb-2">
+                  <div class="col-lg-3"><img src="assets/images/hand.jpg"></div>
+                  <div class="col-lg-9"><h6>Making it over 2000 years old. Richard McClintock</h6></div>
+                </div>
+            </div>
+            <div class="footer-content">
+              <img src="assets/images/faster-strip.png" class="img-fluid">
+            </div>
+          </div>
+      </div>
+        <div class="col-lg-4">
+          <div class="cleaner">
+            <div class="body-content p-4">
+               <h4 class="pb-3 text-center">CLEANER</h4>
+                <div class="row mb-2">
+                  <div class="col-lg-3"><img src="assets/images/hand.jpg"></div>
+                  <div class="col-lg-9"><h6>Contrary to popular belief, Lorem Ipsum is not</h6></div>
+                </div>
+                <div class="row mb-2">
+                  <div class="col-lg-3"><img src="assets/images/hand.jpg"></div>
+                  <div class="col-lg-9"><h6>It has roots in a piece of classical Latin</h6></div>
+                </div>
+                <div class="row mb-2">
+                  <div class="col-lg-3"><img src="assets/images/hand.jpg"></div>
+                  <div class="col-lg-9"><h6>Hampden-Sydney College in Virginia</h6></div>
+                </div>
+                <div class="row mb-2">
+                  <div class="col-lg-3"><img src="assets/images/hand.jpg"></div>
+                  <div class="col-lg-9"><h6>Making it over 2000 years old. Richard McClintock</h6></div>
+                </div>
+            </div>
+            <div class="footer-content">
+              <img src="assets/images/cleaner-strip.png" class="img-fluid">
+            </div>
+          </div>
+      </div>
+  </div>
+</div> 
+</div>
+<!-- paint right choice conatner end here -->
+<!--painting tool conatiner start here -->
+<div class="bg-white paint-right-choice pt-4 pb-4">
+<div class="container">
+<h4 class="pb-2 text-center mb-1">What make Express Painting the right Choice?</h4>
+<hr class="m-0 p-0">
+   <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig">
+
+          <div ngxSlickItem *ngFor="let slide of slides" class="slide">
+            <h3 class="text-center mt-3">{{slide.title}}</h3>
+            <div class="d-flex justify-content-center">
+              <div class="mr-5"><img src="{{slide.img}}" alt="" class="img-fluid"></div>
+              <div class="mt-5 ml-5"><h5> <i class="fa fa-check" aria-hidden="true"></i> {{slide.text1}}</h5>
+               <h5> <i class="fa fa-check" aria-hidden="true"></i> {{slide.text2}}</h5>
+               <h5> <i class="fa fa-check" aria-hidden="true"></i> {{slide.text3}}</h5></div>
+            </div>
+
+           </div>    
+
+        </ngx-slick-carousel>
+</div>
+</div>
+<!-- painting tool conatiner end here -->

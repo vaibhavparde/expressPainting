@@ -7,7 +7,7 @@
             
   <div class="form-group pb-2">
   <span><i class="fa fa-user-o" aria-hidden="true"></i></span>
-    <input type="text"  id="fname" class="input-container" placeholder="Your name" [ngModel]="name" pattern="[a-zA-Z][a-zA-Z ]+" #fname="ngModel" required (keyup)="onRegister($event)"> 
+    <input type="text"  id="fname" class="input-container" placeholder="Your name" [(ngModel)]="name" pattern="[a-zA-Z][a-zA-Z ]+" #fname="ngModel" required (keyup)="onRegister($event)"> 
     <div *ngIf="fname.dirty && fname.invalid" class="error_msg form-text text-danger">
         <small [hidden]="!fname.errors.pattern">Special characters and numbers are not allowed.</small>
         <small [hidden]="!fname.errors.required">Please enter your name</small>       

@@ -47,15 +47,15 @@ export class IndexComponent implements OnInit {
   }
   onRegister(event) {
     if ($('#fname').val() && $('#city').val() && $('#emailid').val() && $('#mobileNo').val()) {
-    if ($('.error_msg').is(":visible")) {
-    this.btnDisable = true;
-    }
-    else {
-      this.btnDisable = false;
-    }
-    } else {
+      if ($('.error_msg').is(":visible")) {
       this.btnDisable = true;
-    }
+      }
+      else {
+        this.btnDisable = false;
+      }
+      } else {
+        this.btnDisable = true;
+      }
    
     }
     resetform() {
